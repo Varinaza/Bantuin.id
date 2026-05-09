@@ -6,7 +6,9 @@
     <title>Bantuin.id - Solusi Kebersihan Kamar Kos</title>
 
     <style>
-      /* --- CSS INTERNAL --- */
+      /* =========================================
+           1. CSS DASAR (GLOBAL & LAPTOP VIEW)
+           ========================================= */
       * {
         margin: 0;
         padding: 0;
@@ -34,7 +36,7 @@
         background-color: #f8f9fa;
       }
 
-      /* Header & Navigasi */
+      /* Header & Navigasi Laptop */
       header {
         background: #ffffff;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -113,7 +115,7 @@
         font-size: 16px;
       }
 
-      /* Hero Section */
+      /* Hero Section Laptop */
       .hero {
         background: linear-gradient(135deg, #8ecae6 0%, #219ebc 100%);
         color: white;
@@ -122,7 +124,7 @@
       }
 
       .hero h2 {
-        font-size: 40px;
+        font-size: 45px;
         margin-bottom: 15px;
       }
       .hero p {
@@ -130,7 +132,7 @@
         margin-bottom: 30px;
       }
 
-      /* Section Umum */
+      /* Section Umum Laptop */
       section {
         padding: 80px 0;
       }
@@ -141,13 +143,14 @@
         color: #023047;
       }
 
+      /* Grid Otomatis (Akan menyesuaikan layar sendiri) */
       .grid-cards {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 30px;
       }
 
-      /* Kartu */
+      /* Kartu Laptop */
       .card {
         background: #fff;
         padding: 30px;
@@ -162,7 +165,7 @@
         transform: translateY(-5px);
       }
 
-      /* Gaya Harga */
+      /* Gaya Harga Laptop */
       .pricing-card {
         border-top-color: #fb8500;
       }
@@ -183,20 +186,18 @@
         margin-bottom: 25px;
         text-align: left;
       }
-
       .pricing-card ul li {
         margin-bottom: 10px;
         border-bottom: 1px solid #eee;
         padding-bottom: 5px;
       }
-
       .pricing-card ul li::before {
         content: "✓ ";
         color: #fb8500;
         font-weight: bold;
       }
 
-      /* Form */
+      /* Form Laptop */
       .booking form {
         background: #fff;
         padding: 40px;
@@ -208,6 +209,7 @@
 
       .form-group {
         margin-bottom: 25px;
+        text-align: left;
       }
       .form-group label {
         display: block;
@@ -230,16 +232,58 @@
         padding: 30px 0;
       }
 
-      /* Responsive */
+      /* =========================================
+           2. CSS RESPONSIVE (KHUSUS HP / MOBILE VIEW)
+           Aktif saat lebar layar di bawah 768px
+           ========================================= */
       @media (max-width: 768px) {
+        /* Header jadi bertumpuk ke bawah */
         header .container {
           flex-direction: column;
+          text-align: center;
         }
+
+        /* Menu navigasi dibungkus agar tidak berantakan */
         nav ul {
           margin-top: 15px;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 15px; /* Jarak antar tombol menu di HP */
+        }
+
+        nav ul li {
+          margin-left: 0;
+        }
+
+        /* Ukuran Hero (Banner Atas) diperkecil */
+        .hero {
+          padding: 60px 0;
         }
         .hero h2 {
-          font-size: 30px;
+          font-size: 28px;
+        }
+        .hero p {
+          font-size: 16px;
+          margin-bottom: 20px;
+        }
+
+        /* Jarak antar bagian (Section) dipersempit agar tidak terlalu kosong */
+        section {
+          padding: 50px 0;
+        }
+        .section-title {
+          font-size: 26px;
+          margin-bottom: 30px;
+        }
+
+        /* Menghilangkan efek 'membesar' pada kartu paket lengkap di HP agar rapi */
+        .card.pricing-card {
+          transform: none !important;
+        }
+
+        /* Padding form disesuaikan untuk layar sempit */
+        .booking form {
+          padding: 25px;
         }
       }
     </style>
