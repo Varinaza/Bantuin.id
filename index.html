@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bantuin.id - Solusi Kebersihan Kamar Kos</title>
+
+    <style>
+      /* --- CSS INTERNAL --- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: #ffffff;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: auto;
+      }
+
+      .bg-alt {
+        background-color: #f8f9fa;
+      }
+
+      /* Header & Navigasi */
+      header {
+        background: #ffffff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
+
+      .logo {
+        color: #219ebc;
+        font-size: 26px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .logo span {
+        color: #023047;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+      }
+
+      nav ul li {
+        margin-left: 20px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 600;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #219ebc;
+      }
+
+      .btn-nav {
+        background: #fb8500;
+        color: white !important;
+        padding: 8px 15px;
+        border-radius: 5px;
+      }
+
+      /* Tombol Global */
+      .btn {
+        display: inline-block;
+        background: #219ebc;
+        color: #fff;
+        padding: 12px 25px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+        text-align: center;
+      }
+
+      .btn:hover {
+        background: #023047;
+      }
+      .btn-full {
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #8ecae6 0%, #219ebc 100%);
+        color: white;
+        text-align: center;
+        padding: 120px 0;
+      }
+
+      .hero h2 {
+        font-size: 40px;
+        margin-bottom: 15px;
+      }
+      .hero p {
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+
+      /* Section Umum */
+      section {
+        padding: 80px 0;
+      }
+      .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 32px;
+        color: #023047;
+      }
+
+      .grid-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      /* Kartu */
+      .card {
+        background: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        border-top: 5px solid #219ebc;
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      /* Gaya Harga */
+      .pricing-card {
+        border-top-color: #fb8500;
+      }
+      .price {
+        font-size: 36px;
+        font-weight: bold;
+        color: #219ebc;
+        margin: 20px 0;
+      }
+      .price span {
+        font-size: 16px;
+        color: #666;
+        font-weight: normal;
+      }
+
+      .pricing-card ul {
+        list-style: none;
+        margin-bottom: 25px;
+        text-align: left;
+      }
+
+      .pricing-card ul li {
+        margin-bottom: 10px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 5px;
+      }
+
+      .pricing-card ul li::before {
+        content: "✓ ";
+        color: #fb8500;
+        font-weight: bold;
+      }
+
+      /* Form */
+      .booking form {
+        background: #fff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: auto;
+      }
+
+      .form-group {
+        margin-bottom: 25px;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      /* Footer */
+      footer {
+        background: #023047;
+        color: white;
+        text-align: center;
+        padding: 30px 0;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        header .container {
+          flex-direction: column;
+        }
+        nav ul {
+          margin-top: 15px;
+        }
+        .hero h2 {
+          font-size: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="#" class="logo">Bantuin.<span>id</span></a>
+        <nav>
+          <ul>
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#layanan">Layanan</a></li>
+            <li><a href="#harga">Harga</a></li>
+            <li><a href="#pesan" class="btn-nav">Pesan Sekarang</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section id="beranda" class="hero">
+      <div class="container">
+        <h2>Kamar Kos Bersih, Belajar Jadi Nyaman!</h2>
+        <p>
+          Jasa kebersihan kamar kos profesional di Malang. Kami datang bawa
+          alat, kamu tinggal rebahan.
+        </p>
+        <a href="#pesan" class="btn">Booking Jadwal Sekarang</a>
+      </div>
+    </section>
+
+    <section class="features bg-alt">
+      <div class="container">
+        <h2 class="section-title">Kenapa Harus Bantuin.id?</h2>
+        <div class="grid-cards">
+          <div class="card">
+            <h3>🛠️ Alat Lengkap</h3>
+            <p>
+              Tak perlu repot sedia sapu atau pel. Cleaner kami membawa
+              perlengkapan standar hotel.
+            </p>
+          </div>
+          <div class="card">
+            <h3>⏰ Jam Fleksibel</h3>
+            <p>
+              Bisa dipesan untuk pagi, siang, atau sore hari sesuai jadwal
+              kuliahmu.
+            </p>
+          </div>
+          <div class="card">
+            <h3>🛡️ Pasti Aman</h3>
+            <p>
+              Tim kami terlatih dan jujur. Privasi serta keamanan barang di
+              kamarmu adalah prioritas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="layanan" class="services">
+      <div class="container">
+        <h2 class="section-title">Pilihan Layanan</h2>
+        <div class="grid-cards">
+          <div class="card">
+            <h3>🧹 Standar</h3>
+            <p>
+              Menyapu, mengepel, lap debu meja, merapikan kasur, dan membuang
+              sampah.
+            </p>
+          </div>
+          <div class="card">
+            <h3>🚽 Kamar Mandi</h3>
+            <p>
+              Sikat lantai, dinding, kloset, dan wastafel agar bebas kerak dan
+              bau.
+            </p>
+          </div>
+          <div class="card">
+            <h3>✨ Deep Clean</h3>
+            <p>
+              Pembersihan menyeluruh hingga kolong kasur dan sela-sela lemari
+              pakaian.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="harga" class="pricing bg-alt">
+      <div class="container">
+        <h2 class="section-title">Daftar Harga</h2>
+        <div class="grid-cards">
+          <div class="card pricing-card">
+            <h3>Paket Hemat</h3>
+            <div class="price">Rp 50rb<span>/datang</span></div>
+            <ul>
+              <li>Pembersihan Kamar Utama</li>
+              <li>Sapu & Pel</li>
+              <li>Rapikan Kasur</li>
+            </ul>
+            <a href="#pesan" class="btn btn-full">Pilih Paket</a>
+          </div>
+          <div
+            class="card pricing-card"
+            style="transform: scale(1.05); border-top-color: #219ebc"
+          >
+            <h3>Paket Lengkap</h3>
+            <div class="price">Rp 85rb<span>/datang</span></div>
+            <ul>
+              <li>Semua Fitur Hemat</li>
+              <li>Sikat Kamar Mandi</li>
+              <li>Wangi Maksimal</li>
+            </ul>
+            <a href="#pesan" class="btn btn-full">Paling Laris</a>
+          </div>
+          <div class="card pricing-card">
+            <h3>Paket Pindah</h3>
+            <div class="price">Rp 150rb<span>/total</span></div>
+            <ul>
+              <li>Pembersihan Menyeluruh</li>
+              <li>Kaca & Jendela</li>
+              <li>Sela-sela Lemari</li>
+            </ul>
+            <a href="#pesan" class="btn btn-full">Pilih Paket</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pesan" class="booking">
+      <div class="container">
+        <h2 class="section-title">Formulir Pemesanan</h2>
+        <form id="bookingForm">
+          <div class="form-group">
+            <label>Nama Lengkap</label>
+            <input
+              type="text"
+              id="nama"
+              placeholder="Contoh: Andi Pratama"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Alamat / Nomor Kamar</label>
+            <input
+              type="text"
+              id="lokasi"
+              placeholder="Contoh: Kos Melati, Kamar 05"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Pilih Paket</label>
+            <select id="layanan-pilih" required>
+              <option value="">-- Pilih Paket --</option>
+              <option value="Paket Hemat (Rp 50rb)">
+                Paket Hemat (Rp 50.000)
+              </option>
+              <option value="Paket Lengkap (Rp 85rb)">
+                Paket Lengkap (Rp 85.000)
+              </option>
+              <option value="Paket Pindah (Rp 150rb)">
+                Paket Pindah (Rp 150.000)
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tanggal Kedatangan</label>
+            <input type="date" id="tanggal" required />
+          </div>
+          <button
+            type="submit"
+            class="btn btn-full"
+            style="background: #25d366"
+          >
+            Kirim Pesanan ke WhatsApp
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2026 Bantuin.id - Solusi Kebersihan Anak Kos.</p>
+        <p style="font-size: 12px; margin-top: 10px; opacity: 0.7">
+          Tersedia di Area Malang & Sekitarnya.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      const bookingForm = document.getElementById("bookingForm");
+
+      bookingForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const nama = document.getElementById("nama").value;
+        const lokasi = document.getElementById("lokasi").value;
+        const layanan = document.getElementById("layanan-pilih").value;
+        const tanggal = document.getElementById("tanggal").value;
+
+        // Format Pesan WhatsApp
+        const pesanWA = `Halo Admin Bantuin.id! 👋%0A%0ASaya ingin memesan jasa cleaning.%0A%0A*Nama:* ${nama}%0A*Lokasi:* ${lokasi}%0A*Paket:* ${layanan}%0A*Tanggal:* ${tanggal}%0A%0AMohon konfirmasinya ya!`;
+
+        // Nomor Admin (Ganti dengan nomor Anda)
+        const nomorWA = "6281234567890";
+
+        window.open(`https://wa.me/${nomorWA}?text=${pesanWA}`, "_blank");
+
+        bookingForm.reset();
+      });
+    </script>
+  </body>
+</html>
